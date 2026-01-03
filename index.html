@@ -1,0 +1,357 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mayara Carolaine - Especialista em Cachos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'mayara-bg': '#faf5ff',
+              'mayara-primary': '#d8b4fe',
+              'mayara-secondary': '#fda4af',
+              'mayara-text-deep': '#4a044e',
+              'mayara-text-body': '#701a75',
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              serif: ['Playfair Display', 'serif'],
+            },
+            animation: {
+              'tilt': 'tilt 1s infinite linear',
+            },
+            keyframes: {
+              tilt: {
+                '0%, 50%, 100%': { transform: 'rotate(0deg)' },
+                '25%': { transform: 'rotate(1deg)' },
+                '75%': { transform: 'rotate(-1deg)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      .glass {
+        background: rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.4);
+      }
+      .glass-dark {
+        background: rgba(74, 4, 78, 0.1);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+      .hover-tilt:hover {
+        transform: rotate(2deg) scale(1.02);
+        transition: all 0.3s ease;
+      }
+      .scroll-smooth {
+        scroll-behavior: smooth;
+      }
+      .blob {
+        position: fixed;
+        border-radius: 50%;
+        filter: blur(100px);
+        z-index: -10;
+        pointer-events: none;
+      }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react/": "https://esm.sh/react@^19.2.3/"
+  }
+}
+</script>
+</head>
+<body class="bg-mayara-bg text-mayara-text-body font-sans scroll-smooth">
+    <!-- Background Blobs -->
+    <div class="blob w-[40rem] h-[40rem] bg-mayara-primary/10 -top-24 -left-24"></div>
+    <div class="blob w-[30rem] h-[30rem] bg-mayara-secondary/10 top-1/2 -right-24"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 px-4 py-4 md:px-8">
+      <div id="nav-container" class="max-w-7xl mx-auto glass rounded-full px-6 py-3 flex items-center justify-between shadow-lg border border-white/20 transition-colors duration-300">
+        <div class="text-mayara-text-deep font-serif font-bold text-xl md:text-2xl cursor-pointer">
+          <a href="index.html">Mayara <span class="text-mayara-secondary">Carolaine</span></a>
+        </div>
+        
+        <div class="hidden md:flex items-center gap-8">
+          <a href="index.html" class="text-mayara-secondary font-medium transition-colors hover:text-mayara-secondary">Home</a>
+          <a href="#sobre" class="text-mayara-text-deep hover:text-mayara-secondary transition-colors font-medium">Sobre Mim</a>
+          <a href="#servicos" class="text-mayara-text-deep hover:text-mayara-secondary transition-colors font-medium">Serviços</a>
+          <a href="portfolio.html" class="text-mayara-text-deep hover:text-mayara-secondary transition-colors font-medium">Galeria</a>
+          <a href="#contato" class="bg-mayara-primary text-mayara-text-deep px-6 py-2 rounded-full font-semibold shadow-md hover:bg-white transition-all active:scale-95">
+            Agendar
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <div class="md:hidden">
+            <button id="menu-btn" class="p-2 rounded-md text-mayara-text-deep focus:outline-none">
+                <svg id="menu-open-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                <svg id="menu-close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu Panel -->
+      <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 right-0 mt-2 mx-4 transition-all duration-300 ease-in-out transform origin-top opacity-0 -translate-y-2 scale-95">
+        <div class="glass rounded-2xl shadow-lg p-6 transition-colors duration-300">
+            <div class="flex flex-col items-center gap-6 text-center">
+                <a href="index.html" class="text-mayara-secondary hover:text-mayara-secondary transition-colors font-medium text-lg">Home</a>
+                <a href="#sobre" class="text-mayara-text-deep hover:text-mayara-secondary transition-colors font-medium text-lg">Sobre Mim</a>
+                <a href="#servicos" class="text-mayara-text-deep hover:text-mayara-secondary transition-colors font-medium text-lg">Serviços</a>
+                <a href="portfolio.html" class="text-mayara-text-deep hover:text-mayara-secondary transition-colors font-medium text-lg">Galeria</a>
+                <a href="#contato" class="bg-mayara-primary text-mayara-text-deep px-8 py-3 rounded-full font-semibold shadow-md hover:bg-white transition-all active:scale-95 w-full mt-4">
+                    Agendar
+                </a>
+            </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu Backdrop -->
+    <div id="menu-backdrop" class="fixed inset-0 z-40 bg-black/50 hidden opacity-0 transition-opacity duration-300 md:hidden"></div>
+
+    <main class="pt-24 space-y-24 md:space-y-32 overflow-x-hidden">
+        <!-- Hero Section -->
+        <section class="relative px-4 md:px-8 max-w-7xl mx-auto">
+          <div class="flex flex-col md:flex-row items-center gap-12 min-h-[70vh]">
+            <div class="flex-1 space-y-8 text-center md:text-left">
+              <div class="inline-block px-4 py-1 rounded-full glass-dark text-mayara-text-deep text-sm font-semibold tracking-wide uppercase">
+                Bem-vinda ao seu novo ritual
+              </div>
+              <h1 class="text-5xl md:text-7xl font-serif text-mayara-text-deep leading-tight">
+                Realçando a beleza dos seus <span class="text-mayara-secondary italic">fios naturais</span>
+              </h1>
+              <p class="text-lg md:text-xl text-mayara-text-body max-w-xl mx-auto md:mx-0">
+                Transforme a relação com seus cachos através de técnicas especializadas e atendimento humanizado.
+              </p>
+              <div class="flex flex-wrap justify-center md:justify-start gap-4 pt-4">
+                <a href="#contato" class="bg-mayara-primary text-mayara-text-deep px-10 py-4 rounded-full font-bold text-lg shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all active:scale-95 text-center">
+                  Agendar Consultoria
+                </a>
+                <a href="portfolio.html" class="glass text-mayara-text-deep px-10 py-4 rounded-full font-bold text-lg hover:bg-white/50 transition-all flex items-center gap-2 group text-center">
+                  Ver Portfólio 
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+              </div>
+            </div>
+            <div class="flex-1 relative">
+              <div class="relative z-10 rounded-2xl overflow-hidden shadow-2xl border-4 border-white/30 transform hover:scale-105 transition-transform duration-500">
+                <img src="may-perfil.png" alt="Cabelo Cacheado" class="w-full h-full object-cover">
+              </div>
+              <div class="absolute -top-10 -right-10 w-40 h-40 bg-mayara-secondary/30 rounded-full blur-3xl -z-10"></div>
+              <div class="absolute -bottom-10 -left-10 w-64 h-64 bg-mayara-primary/20 rounded-full blur-3xl -z-10"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Sobre Mim -->
+        <section id="sobre" class="bg-white/20 py-24 px-4 md:px-8">
+          <div class="max-w-7xl mx-auto flex flex-col md:flex-row-reverse items-center gap-16">
+            <div class="flex-1 space-y-6">
+              <h2 class="font-serif text-4xl md:text-5xl text-mayara-text-deep italic">Muito prazer, sou Mayara</h2>
+              <p class="text-xl text-mayara-text-body font-light leading-relaxed">
+                "Especialista em cabelos com curvaturas e apaixonada por autocuidado."
+              </p>
+              <p class="text-mayara-text-body leading-relaxed">
+                Minha missão é ajudar cada mulher a reencontrar sua essência através da aceitação e do cuidado adequado com seu cabelo natural. Com anos de estudo em tricologia e técnicas específicas para cachos, ofereço um espaço de acolhimento e transformação real.
+              </p>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+                <div class="flex items-center gap-2 text-mayara-text-deep font-semibold">
+                  <span class="text-mayara-secondary">✓</span> Especialista em Curvaturas
+                </div>
+                <div class="flex items-center gap-2 text-mayara-text-deep font-semibold">
+                  <span class="text-mayara-secondary">✓</span> Atendimento Exclusivo
+                </div>
+                <div class="flex items-center gap-2 text-mayara-text-deep font-semibold">
+                  <span class="text-mayara-secondary">✓</span> Tricologia Capilar
+                </div>
+                <div class="flex items-center gap-2 text-mayara-text-deep font-semibold">
+                  <span class="text-mayara-secondary">✓</span> Transição Humanizada
+                </div>
+              </div>
+            </div>
+            <div class="flex-1 relative flex justify-center">
+              <div class="w-80 h-[500px] glass rounded-3xl p-4 shadow-xl rotate-3 hover:rotate-0 transition-all duration-700">
+                 <img src="may-perfil.png" alt="Mayara" class="w-full h-full object-cover rounded-2xl">
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Serviços -->
+        <section id="servicos" class="max-w-7xl mx-auto px-4 md:px-8">
+          <div class="text-center space-y-4 mb-16">
+            <h2 class="font-serif text-4xl md:text-5xl text-mayara-text-deep">Serviços Especializados</h2>
+            <p class="text-mayara-text-body max-w-2xl mx-auto">Soluções completas para todos os tipos de ondas, cachos e crespos.</p>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="glass p-8 rounded-3xl space-y-4 hover-tilt hover:shadow-2xl transition-all cursor-default group">
+              <div class="text-4xl bg-mayara-primary/30 w-16 h-16 flex items-center justify-center rounded-2xl group-hover:bg-mayara-secondary/30 transition-colors">✂️</div>
+              <h3 class="text-xl font-bold text-mayara-text-deep">Corte Especializado</h3>
+              <p class="text-sm leading-relaxed">Cortes pensados na geometria de cada cacho, respeitando o volume e o caimento natural.</p>
+            </div>
+            <div class="glass p-8 rounded-3xl space-y-4 hover-tilt hover:shadow-2xl transition-all cursor-default group">
+              <div class="text-4xl bg-mayara-primary/30 w-16 h-16 flex items-center justify-center rounded-2xl group-hover:bg-mayara-secondary/30 transition-colors">✨</div>
+              <h3 class="text-xl font-bold text-mayara-text-deep">Transição Capilar</h3>
+              <p class="text-sm leading-relaxed">Acompanhamento humanizado para você redescobrir sua identidade durante a transição.</p>
+            </div>
+            <div class="glass p-8 rounded-3xl space-y-4 hover-tilt hover:shadow-2xl transition-all cursor-default group">
+              <div class="text-4xl bg-mayara-primary/30 w-16 h-16 flex items-center justify-center rounded-2xl group-hover:bg-mayara-secondary/30 transition-colors">💧</div>
+              <h3 class="text-xl font-bold text-mayara-text-deep">Hidratação</h3>
+              <p class="text-sm leading-relaxed">Protocolos exclusivos para devolver a água e os nutrientes essenciais aos seus fios.</p>
+            </div>
+            <div class="glass p-8 rounded-3xl space-y-4 hover-tilt hover:shadow-2xl transition-all cursor-default group">
+              <div class="text-4xl bg-mayara-primary/30 w-16 h-16 flex items-center justify-center rounded-2xl group-hover:bg-mayara-secondary/30 transition-colors">🎀</div>
+              <h3 class="text-xl font-bold text-mayara-text-deep">Finalização</h3>
+              <p class="text-sm leading-relaxed">Técnicas de definição avançadas que garantem day-afters perfeitos e brilho intenso.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Preview Galeria -->
+        <section class="px-4 md:px-8 max-w-7xl mx-auto pb-20">
+          <div class="glass p-8 md:p-12 rounded-[2.5rem] md:rounded-[3rem] shadow-xl space-y-12">
+             <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                <div class="text-center md:text-left">
+                  <h2 class="font-serif text-3xl md:text-4xl text-mayara-text-deep mb-2">Transformações Reais</h2>
+                  <p>Veja os resultados incríveis que alcançamos no estúdio.</p>
+                </div>
+                <a href="portfolio.html" class="bg-mayara-secondary text-mayara-text-deep px-8 py-3 rounded-full font-bold hover:bg-white transition-all shadow-md flex items-center gap-2">
+                  Ver todas as Transformações 
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+             </div>
+             
+             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                <div class="aspect-square rounded-2xl overflow-hidden shadow-lg group">
+                   <img src="https://images.unsplash.com/photo-1620331311520-246422fd82f9?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Transformação 1">
+                </div>
+                <div class="aspect-square rounded-2xl overflow-hidden shadow-lg group">
+                   <img src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Transformação 2">
+                </div>
+                <div class="aspect-square rounded-2xl overflow-hidden shadow-lg group hidden sm:block">
+                   <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Transformação 3">
+                </div>
+             </div>
+          </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contato" class="bg-white/40 border-t border-mayara-primary/20 pt-16 pb-8 px-4">
+      <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+        <div class="space-y-4 text-center md:text-left">
+          <h3 class="font-serif text-2xl text-mayara-text-deep font-bold">Mayara Carolaine</h3>
+          <p class="text-mayara-text-body">
+            Especialista em cabelos com curvaturas e apaixonada por elevar a autoestima através do autocuidado.
+          </p>
+        </div>
+        <div class="space-y-4 text-center md:text-left">
+          <h4 class="font-bold text-mayara-text-deep uppercase tracking-wider text-sm">Links Rápidos</h4>
+          <ul class="space-y-2">
+            <li><a href="index.html" class="hover:text-mayara-secondary transition-colors">Início</a></li>
+            <li><a href="#servicos" class="hover:text-mayara-secondary transition-colors">Serviços</a></li>
+            <li><a href="#sobre" class="hover:text-mayara-secondary transition-colors">Sobre Mim</a></li>
+          </ul>
+        </div>
+        <div class="space-y-4 text-center md:text-left flex flex-col items-center md:items-start">
+          <h4 class="font-bold text-mayara-text-deep uppercase tracking-wider text-sm">Conecte-se</h4>
+          <div class="flex gap-4">
+            <a href="#" class="w-12 h-12 glass rounded-full flex items-center justify-center text-mayara-text-deep hover:bg-mayara-primary transition-all animate-pulse">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="#" class="w-12 h-12 glass rounded-full flex items-center justify-center text-mayara-text-deep hover:bg-mayara-primary transition-all">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="text-center text-sm text-mayara-text-body/60 border-t border-white/40 pt-8">
+        © <span id="year"></span> Mayara Carolaine. Todos os direitos reservados.
+      </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile Menu Logic
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const openIcon = document.getElementById('menu-open-icon');
+        const closeIcon = document.getElementById('menu-close-icon');
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        const menuBackdrop = document.getElementById('menu-backdrop');
+        const navContainer = document.getElementById('nav-container');
+        const mobileMenuPanel = mobileMenu.querySelector('.glass');
+
+        function toggleMenu() {
+            const isHidden = mobileMenu.classList.contains('hidden');
+            
+            if (isHidden) {
+                // --- OPEN MENU ---
+                mobileMenu.classList.remove('hidden');
+                menuBackdrop.classList.remove('hidden');
+                document.body.style.overflow = 'hidden'; // Prevent body scroll
+                
+                // Make nav and menu opaque to stand out against backdrop
+                navContainer.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+                mobileMenuPanel.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+
+                setTimeout(() => {
+                    mobileMenu.classList.remove('opacity-0', '-translate-y-2', 'scale-95');
+                    mobileMenu.classList.add('opacity-100', 'translate-y-0', 'scale-100');
+                    menuBackdrop.classList.remove('opacity-0');
+                    menuBackdrop.classList.add('opacity-100');
+                }, 10);
+
+                openIcon.classList.add('hidden');
+                closeIcon.classList.remove('hidden');
+                menuBackdrop.addEventListener('click', toggleMenu);
+            } else {
+                // --- CLOSE MENU ---
+                mobileMenu.classList.remove('opacity-100', 'translate-y-0', 'scale-100');
+                mobileMenu.classList.add('opacity-0', '-translate-y-2', 'scale-95');
+                menuBackdrop.classList.remove('opacity-100');
+                menuBackdrop.classList.add('opacity-0');
+                document.body.style.overflow = ''; // Restore body scroll
+                
+                // Restore glass transparency
+                navContainer.style.backgroundColor = '';
+                mobileMenuPanel.style.backgroundColor = '';
+
+                setTimeout(() => {
+                    mobileMenu.classList.add('hidden');
+                    menuBackdrop.classList.add('hidden');
+                }, 300);
+
+                openIcon.classList.remove('hidden');
+                closeIcon.classList.add('hidden');
+                menuBackdrop.removeEventListener('click', toggleMenu);
+            }
+        }
+
+        menuBtn.addEventListener('click', toggleMenu);
+
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (!mobileMenu.classList.contains('hidden')) toggleMenu();
+            });
+        });
+    </script>
+</body>
+</html>
