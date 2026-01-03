@@ -72,7 +72,13 @@
       }
     </style>
 </head>
-<body class="bg-mayara-bg text-mayara-text-body font-sans">
+<body class="text-mayara-text-body font-sans">
+    <!-- Background Color Layer -->
+    <div class="fixed inset-0 z-[-50] bg-mayara-bg"></div>
+
+    <!-- Background Image Subtle -->
+    <div class="fixed inset-0 z-[-40] opacity-[0.15] pointer-events-none bg-[url(may-perfil.png)] bg-cover bg-center bg-no-repeat mix-blend-multiply"></div>
+
     <div class="blob w-[40rem] h-[40rem] bg-mayara-primary/10 -top-24 -left-24"></div>
     <div class="blob w-[30rem] h-[30rem] bg-mayara-secondary/10 top-1/2 -right-24"></div>
 
@@ -88,7 +94,7 @@
           <a href="index.html#sobre" class="text-mayara-text-deep hover:text-mayara-secondary transition-colors font-medium">Sobre Mim</a>
           <a href="index.html#servicos" class="text-mayara-text-deep hover:text-mayara-secondary transition-colors font-medium">Serviços</a>
           <a href="portfolio.html" class="text-mayara-secondary font-medium transition-colors hover:text-mayara-secondary">Galeria</a>
-          <a href="index.html#contato" class="bg-mayara-primary text-mayara-text-deep px-6 py-2 rounded-full font-semibold shadow-md hover:bg-white transition-all active:scale-95">
+          <a href="https://wa.me/5584996748414?text=Oi%20May,%20quero%20marcar%20meu%20horario" target="_blank" class="bg-mayara-primary text-mayara-text-deep px-6 py-2 rounded-full font-semibold shadow-md hover:bg-white transition-all active:scale-95">
             Agendar
           </a>
         </div>
@@ -110,7 +116,7 @@
                 <a href="index.html#sobre" class="text-mayara-text-deep hover:text-mayara-secondary transition-colors font-medium text-lg">Sobre Mim</a>
                 <a href="index.html#servicos" class="text-mayara-text-deep hover:text-mayara-secondary transition-colors font-medium text-lg">Serviços</a>
                 <a href="portfolio.html" class="text-mayara-secondary hover:text-mayara-secondary transition-colors font-medium text-lg">Galeria</a>
-                <a href="index.html#contato" class="bg-mayara-primary text-mayara-text-deep px-8 py-3 rounded-full font-semibold shadow-md hover:bg-white transition-all active:scale-95 w-full mt-4">
+                <a href="https://wa.me/5584996748414?text=Oi%20May,%20quero%20marcar%20meu%20horario" target="_blank" class="bg-mayara-primary text-mayara-text-deep px-8 py-3 rounded-full font-semibold shadow-md hover:bg-white transition-all active:scale-95 w-full mt-4">
                     Agendar
                 </a>
             </div>
@@ -137,64 +143,128 @@
             <button onclick="filterPortfolio('tratamentos')" id="btn-tratamentos" class="filter-btn px-8 py-2 rounded-full font-semibold transition-all shadow-sm glass text-mayara-text-deep hover:bg-white/40">
               Tratamentos
             </button>
+            <button onclick="filterPortfolio('coloracao')" id="btn-coloracao" class="filter-btn px-8 py-2 rounded-full font-semibold transition-all shadow-sm glass text-mayara-text-deep hover:bg-white/40">
+              Coloração
+            </button>
           </div>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10" id="portfolio-grid">
           <!-- Item 1 -->
-          <div class="portfolio-item glass p-4 rounded-[2.5rem] shadow-xl hover-tilt group animate-fade-in cursor-pointer" data-category="cortes" onclick="openPortfolioItem(0)">
+          <div class="portfolio-item glass p-4 rounded-[2.5rem] shadow-xl hover-tilt group animate-fade-in cursor-pointer" data-category="coloracao cortes" onclick="openPortfolioItem(0)">
              <div class="relative aspect-[4/5] rounded-[2rem] overflow-hidden mb-6">
-                <img src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Resultado">
-                <div class="absolute top-4 left-4 glass px-4 py-1 rounded-full text-xs font-bold text-mayara-text-deep uppercase tracking-widest">Cortes</div>
-                <div class="absolute bottom-4 right-4 w-24 h-24 rounded-2xl overflow-hidden border-2 border-white shadow-xl opacity-90">
-                   <img src="https://images.unsplash.com/photo-1582095133179-bf108920175a?q=80&w=200&auto=format&fit=crop" class="w-full h-full object-cover" alt="Antes">
+                <img src="portifolioMidias/a1Depois.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Resultado">
+                <div class="absolute top-4 left-4 glass px-4 py-1 rounded-full text-xs font-bold text-mayara-text-deep uppercase tracking-widest">Coloração & Cortes</div>
+                <div class="absolute bottom-4 right-4 w-24 h-24 rounded-2xl overflow-hidden border-2 border-white shadow-xl opacity-90 group/antes">
+                   <img src="portifolioMidias/a1Antes.jpg" class="w-full h-full object-cover transition-transform duration-500 group-hover/antes:scale-110" alt="Antes">
                    <div class="absolute inset-0 bg-black/40 flex items-center justify-center text-white text-[10px] font-bold">ANTES</div>
                 </div>
              </div>
              <div class="px-4 pb-4">
-                <h3 class="text-2xl font-serif text-mayara-text-deep font-bold">Corte Geométrico</h3>
-                <p class="text-sm text-mayara-text-body/80 mt-1">Definição extrema e volume controlado.</p>
+                <h3 class="text-2xl font-serif text-mayara-text-deep font-bold">Morena Iluminada</h3>
+                <p class="text-sm text-mayara-text-body/80 mt-1">Nuances mel e dourado para realçar.</p>
              </div>
           </div>
-          
+
           <!-- Item 2 -->
-          <div class="portfolio-item glass p-4 rounded-[2.5rem] shadow-xl hover-tilt group animate-fade-in cursor-pointer" data-category="tratamentos" onclick="openPortfolioItem(1)">
+          <div class="portfolio-item glass p-4 rounded-[2.5rem] shadow-xl hover-tilt group animate-fade-in cursor-pointer" data-category="coloracao cortes" onclick="openPortfolioItem(1)">
              <div class="relative aspect-[4/5] rounded-[2rem] overflow-hidden mb-6">
-                <img src="https://images.unsplash.com/photo-1620331311520-246422fd82f9?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Resultado">
-                <div class="absolute top-4 left-4 glass px-4 py-1 rounded-full text-xs font-bold text-mayara-text-deep uppercase tracking-widest">Tratamentos</div>
-                <div class="absolute bottom-4 right-4 w-24 h-24 rounded-2xl overflow-hidden border-2 border-white shadow-xl opacity-90">
-                   <img src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?q=80&w=200&auto=format&fit=crop" class="w-full h-full object-cover" alt="Antes">
+                <img src="portifolioMidias/a2Depois.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Resultado">
+                <div class="absolute top-4 left-4 glass px-4 py-1 rounded-full text-xs font-bold text-mayara-text-deep uppercase tracking-widest">Coloração & Cortes</div>
+                <div class="absolute bottom-4 right-4 w-24 h-24 rounded-2xl overflow-hidden border-2 border-white shadow-xl opacity-90 group/antes">
+                   <img src="portifolioMidias/a2Antes.jpg" class="w-full h-full object-cover transition-transform duration-500 group-hover/antes:scale-110" alt="Antes">
                    <div class="absolute inset-0 bg-black/40 flex items-center justify-center text-white text-[10px] font-bold">ANTES</div>
                 </div>
              </div>
              <div class="px-4 pb-4">
-                <h3 class="text-2xl font-serif text-mayara-text-deep font-bold">Cronograma Capilar</h3>
-                <p class="text-sm text-mayara-text-body/80 mt-1">Brilho intenso e saúde recuperada.</p>
+                <h3 class="text-2xl font-serif text-mayara-text-deep font-bold">Renovação Total</h3>
+                <p class="text-sm text-mayara-text-body/80 mt-1">Corte e cor em harmonia.</p>
              </div>
           </div>
 
           <!-- Item 3 -->
           <div class="portfolio-item glass p-4 rounded-[2.5rem] shadow-xl hover-tilt group animate-fade-in cursor-pointer" data-category="cortes" onclick="openPortfolioItem(2)">
              <div class="relative aspect-[4/5] rounded-[2rem] overflow-hidden mb-6">
-                <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Resultado">
+                <img src="portifolioMidias/b1Depois2.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Resultado">
                 <div class="absolute top-4 left-4 glass px-4 py-1 rounded-full text-xs font-bold text-mayara-text-deep uppercase tracking-widest">Cortes</div>
-                <div class="absolute bottom-4 right-4 w-24 h-24 rounded-2xl overflow-hidden border-2 border-white shadow-xl opacity-90">
-                   <img src="https://images.unsplash.com/photo-1505944270255-bd2b68af6420?q=80&w=200&auto=format&fit=crop" class="w-full h-full object-cover" alt="Antes">
+                <div class="absolute bottom-4 right-4 w-24 h-24 rounded-2xl overflow-hidden border-2 border-white shadow-xl opacity-90 group/antes">
+                   <img src="portifolioMidias/b1Antes.jpg" class="w-full h-full object-cover transition-transform duration-500 group-hover/antes:scale-110" alt="Antes">
                    <div class="absolute inset-0 bg-black/40 flex items-center justify-center text-white text-[10px] font-bold">ANTES</div>
                 </div>
              </div>
              <div class="px-4 pb-4">
-                <h3 class="text-2xl font-serif text-mayara-text-deep font-bold">Big Chop Especial</h3>
-                <p class="text-sm text-mayara-text-body/80 mt-1">O início de uma nova jornada natural.</p>
+                <h3 class="text-2xl font-serif text-mayara-text-deep font-bold">Charme Atemporal</h3>
+                <p class="text-sm text-mayara-text-body/80 mt-1">Leveza e jovialidade em cada fio.</p>
              </div>
           </div>
+        </div>
+
+        <!-- Depoimentos -->
+        <div class="mt-24 space-y-12">
+            <div class="text-center space-y-4">
+                <h2 class="font-serif text-3xl md:text-4xl text-mayara-text-deep">O Amor de Nossas Clientes</h2>
+                <p class="text-mayara-text-body text-lg italic font-light">Histórias reais de quem viveu a transformação</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Depoimento 1 -->
+                <div class="glass p-8 rounded-[2rem] relative hover:-translate-y-2 transition-transform duration-300">
+                    <div class="absolute -top-6 left-8 text-6xl text-mayara-primary opacity-50 font-serif">"</div>
+                    <p class="text-mayara-text-body/90 italic leading-relaxed pt-4 mb-6">
+                        Nunca imaginei que meu cabelo pudesse ter tanta definição! A Mayara não só cortou, mas me ensinou a cuidar dos meus cachos em casa. Transformador!
+                    </p>
+                    <div class="flex items-center gap-4 border-t border-white/30 pt-4">
+                        <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-white shadow-sm">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=100&auto=format&fit=crop" alt="Ana Clara" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-mayara-text-deep text-sm">Ana Clara</h4>
+                            <p class="text-xs text-mayara-text-body/70">Transição Capilar</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Depoimento 2 -->
+                <div class="glass p-8 rounded-[2rem] relative hover:-translate-y-2 transition-transform duration-300">
+                    <div class="absolute -top-6 left-8 text-6xl text-mayara-primary opacity-50 font-serif">"</div>
+                    <p class="text-mayara-text-body/90 italic leading-relaxed pt-4 mb-6">
+                        O ambiente é acolhedor e o atendimento é impecável. Fiz o Morena Iluminada e amei o resultado, ficou super natural e saudável.
+                    </p>
+                    <div class="flex items-center gap-4 border-t border-white/30 pt-4">
+                        <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-white shadow-sm">
+                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=100&auto=format&fit=crop" alt="Juliana Costa" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-mayara-text-deep text-sm">Juliana Costa</h4>
+                            <p class="text-xs text-mayara-text-body/70">Coloração</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Depoimento 3 -->
+                <div class="glass p-8 rounded-[2rem] relative hover:-translate-y-2 transition-transform duration-300">
+                    <div class="absolute -top-6 left-8 text-6xl text-mayara-primary opacity-50 font-serif">"</div>
+                    <p class="text-mayara-text-body/90 italic leading-relaxed pt-4 mb-6">
+                        Fiz meu Big Chop com a May e foi a melhor decisão. Me senti segura e acolhida durante todo o processo. Recomendo de olhos fechados!
+                    </p>
+                    <div class="flex items-center gap-4 border-t border-white/30 pt-4">
+                        <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-white shadow-sm">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=100&auto=format&fit=crop" alt="Beatriz Silva" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-mayara-text-deep text-sm">Beatriz Silva</h4>
+                            <p class="text-xs text-mayara-text-body/70">Corte</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- CTA Final -->
         <div class="bg-mayara-primary/30 p-8 md:p-12 rounded-[2.5rem] md:rounded-[3rem] text-center space-y-8 mt-20">
            <h2 class="text-3xl md:text-4xl font-serif text-mayara-text-deep italic">Pronta para viver sua própria transformação?</h2>
            <p class="text-mayara-text-body max-w-xl mx-auto">Cada fio de cabelo tem uma história única. Vamos começar a escrever um novo capítulo para os seus cachos?</p>
-           <a href="index.html#contato" class="inline-block bg-white text-mayara-text-deep px-12 py-5 rounded-full font-bold text-xl shadow-xl hover:bg-mayara-secondary transition-all transform hover:scale-105 active:scale-95">
+           <a href="https://wa.me/5584996748414?text=Oi%20May,%20quero%20marcar%20meu%20horario" target="_blank" class="inline-block bg-white text-mayara-text-deep px-12 py-5 rounded-full font-bold text-xl shadow-xl hover:bg-mayara-secondary transition-all transform hover:scale-105 active:scale-95">
              Quero transformar meu cabelo
            </a>
         </div>
@@ -212,6 +282,7 @@
                 <!-- Carousel Section -->
                 <div class="w-full md:w-1/2 bg-gray-100 relative min-h-[300px] md:min-h-full">
                     <img id="modal-image" src="" alt="Portfolio Detail" class="w-full h-full object-cover absolute inset-0 transition-opacity duration-300">
+                    <video id="modal-video" class="w-full h-full object-cover absolute inset-0 transition-opacity duration-300 hidden" autoplay muted loop playsinline></video>
                     
                     <!-- Navigation Arrows -->
                     <button onclick="prevSlide()" class="absolute left-4 top-1/2 -translate-y-1/2 p-2 bg-white/30 hover:bg-white/80 rounded-full backdrop-blur-md transition-all">
@@ -237,7 +308,7 @@
                     </div>
                     
                     <div class="mt-8 pt-8 border-t border-mayara-primary/20">
-                        <a href="index.html#contato" onclick="closeModal()" class="block w-full text-center bg-mayara-text-deep text-white py-3 rounded-full font-bold hover:bg-mayara-secondary hover:text-mayara-text-deep transition-all shadow-lg">
+                        <a href="https://wa.me/5584996748414?text=Oi%20May,%20quero%20marcar%20meu%20horario" target="_blank" onclick="closeModal()" class="block w-full text-center bg-mayara-text-deep text-white py-3 rounded-full font-bold hover:bg-mayara-secondary hover:text-mayara-text-deep transition-all shadow-lg">
                             Agendar Transformação
                         </a>
                     </div>
@@ -255,33 +326,36 @@
       // Portfolio Data
       const portfolioData = [
           {
-              category: "Cortes",
-              title: "Corte Geométrico",
-              description: "Definição extrema e volume controlado.",
-              story: "A cliente chegou buscando uma mudança radical que valorizasse o volume natural sem perder a definição. Utilizamos a técnica de corte a seco, esculpindo cada cacho para criar um formato geométrico que emoldura o rosto perfeitamente. O resultado foi uma leveza incrível e cachos que se acomodam sozinhos, facilitando muito a rotina de cuidados em casa.",
+              category: "Coloração e Cortes",
+              title: "Morena Iluminada",
+              description: "Contraste sutil e elegância.",
+              story: "Para quem deseja mudar sem perder a identidade natural dos fios escuros. Criamos pontos de luz estratégicos em tons de mel e avelã, preservando a raiz natural para baixa manutenção. Além da cor, realizamos um corte para devolver o movimento e a definição dos cachos. O resultado é um cabelo vibrante, com profundidade e muito brilho.",
               images: [
-                  "https://images.unsplash.com/photo-1595152772835-219674b2a8a6?q=80&w=800&auto=format&fit=crop",
-                  "https://images.unsplash.com/photo-1582095133179-bf108920175a?q=80&w=800&auto=format&fit=crop"
+                  "portifolioMidias/a1Depois.jpg",
+                  "portifolioMidias/a1Antes.jpg"
               ]
           },
           {
-              category: "Tratamentos",
-              title: "Cronograma Capilar",
-              description: "Brilho intenso e saúde recuperada.",
-              story: "Após processos químicos agressivos, este cabelo precisava de um resgate urgente. Iniciamos um cronograma capilar personalizado focado em reconstrução e nutrição profunda. Após 4 sessões, devolvemos a elasticidade, o brilho e a maciez, provando que com o cuidado certo e produtos de alta performance, todo cabelo pode renascer com saúde.",
+              category: "Coloração e Cortes",
+              title: "Renovação Total",
+              description: "Harmonia perfeita entre corte e cor.",
+              story: "Uma transformação completa para realçar a beleza natural. Combinamos um corte estruturado para dar leveza e movimento aos cachos com uma coloração personalizada que ilumina o rosto. O resultado é um visual moderno, cheio de vida e personalidade.",
               images: [
-                  "https://images.unsplash.com/photo-1620331311520-246422fd82f9?q=80&w=800&auto=format&fit=crop",
-                  "https://images.unsplash.com/photo-1522337660859-02fbefca4702?q=80&w=800&auto=format&fit=crop"
+                  "portifolioMidias/a2Depois.jpg",
+                  "portifolioMidias/a2Antes.jpg"
               ]
           },
           {
               category: "Cortes",
-              title: "Big Chop Especial",
-              description: "O início de uma nova jornada natural.",
-              story: "O Grande Corte (Big Chop) é um momento de libertação e renascimento. Esta cliente decidiu remover toda a parte alisada e assumir sua textura natural. Foi um momento emocionante de reencontro consigo mesma. Criamos um corte curto e moderno, super prático para o dia a dia, celebrando a beleza real e autêntica dos seus fios.",
+              title: "Charme Atemporal",
+              description: "Leveza e jovialidade em um corte curto.",
+              story: "Quem disse que estilo tem idade? Esta cliente querida estava sentindo o cabelo pesado e sem vida. Realizamos um corte curto, moderno e super prático, que trouxe um ar de jovialidade incrível e destacou o sorriso dela. Um visual cheio de charme e muito fácil de manter no dia a dia.",
               images: [
-                  "https://images.unsplash.com/photo-1621605815971-fbc98d665033?q=80&w=800&auto=format&fit=crop",
-                  "https://images.unsplash.com/photo-1505944270255-bd2b68af6420?q=80&w=800&auto=format&fit=crop"
+                  "portifolioMidias/b1Depois.mp4",
+                  "portifolioMidias/b1Depois2.jpg",
+                  "portifolioMidias/b1Depois3.mp4",
+                  "portifolioMidias/b1Antes.jpg",
+                  "portifolioMidias/b1Antes2.jpg"
               ]
           }
       ];
@@ -329,12 +403,28 @@
       function updateCarousel() {
           const item = portfolioData[currentItemIndex];
           const imgElement = document.getElementById('modal-image');
+          const videoElement = document.getElementById('modal-video');
+          const currentSrc = item.images[currentImageIndex];
+          const isVideo = currentSrc.endsWith('.mp4');
           
           // Simple fade effect
           imgElement.style.opacity = '0';
+          videoElement.style.opacity = '0';
+
           setTimeout(() => {
-              imgElement.src = item.images[currentImageIndex];
-              imgElement.style.opacity = '1';
+              if (isVideo) {
+                  imgElement.classList.add('hidden');
+                  videoElement.classList.remove('hidden');
+                  videoElement.src = currentSrc;
+                  videoElement.style.opacity = '1';
+                  videoElement.play().catch(e => console.log("Autoplay prevented", e));
+              } else {
+                  videoElement.classList.add('hidden');
+                  videoElement.pause();
+                  imgElement.classList.remove('hidden');
+                  imgElement.src = currentSrc;
+                  imgElement.style.opacity = '1';
+              }
           }, 150);
 
           // Update dots
@@ -402,7 +492,7 @@
 
         // Update Visibility
         items.forEach(item => {
-          if (category === 'todos' || item.getAttribute('data-category') === category) {
+          if (category === 'todos' || item.getAttribute('data-category').includes(category)) {
             item.classList.remove('hidden');
           } else {
             item.classList.add('hidden');

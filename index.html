@@ -75,7 +75,13 @@
 }
 </script>
 </head>
-<body class="bg-mayara-bg text-mayara-text-body font-sans scroll-smooth">
+<body class="text-mayara-text-body font-sans scroll-smooth">
+    <!-- Background Color Layer -->
+    <div class="fixed inset-0 z-[-50] bg-mayara-bg"></div>
+
+    <!-- Background Image Subtle -->
+    <div class="fixed inset-0 z-[-40] opacity-[0.15] pointer-events-none bg-[url(may-perfil.png)] bg-cover bg-center bg-no-repeat mix-blend-multiply"></div>
+
     <!-- Background Blobs -->
     <div class="blob w-[40rem] h-[40rem] bg-mayara-primary/10 -top-24 -left-24"></div>
     <div class="blob w-[30rem] h-[30rem] bg-mayara-secondary/10 top-1/2 -right-24"></div>
@@ -92,7 +98,7 @@
           <a href="#sobre" class="text-mayara-text-deep hover:text-mayara-secondary transition-colors font-medium">Sobre Mim</a>
           <a href="#servicos" class="text-mayara-text-deep hover:text-mayara-secondary transition-colors font-medium">Serviços</a>
           <a href="portfolio.html" class="text-mayara-text-deep hover:text-mayara-secondary transition-colors font-medium">Galeria</a>
-          <a href="#contato" class="bg-mayara-primary text-mayara-text-deep px-6 py-2 rounded-full font-semibold shadow-md hover:bg-white transition-all active:scale-95">
+          <a href="https://wa.me/5584996748414?text=Oi%20May,%20quero%20marcar%20meu%20horario" target="_blank" class="bg-mayara-primary text-mayara-text-deep px-6 py-2 rounded-full font-semibold shadow-md hover:bg-white transition-all active:scale-95">
             Agendar
           </a>
         </div>
@@ -114,7 +120,7 @@
                 <a href="#sobre" class="text-mayara-text-deep hover:text-mayara-secondary transition-colors font-medium text-lg">Sobre Mim</a>
                 <a href="#servicos" class="text-mayara-text-deep hover:text-mayara-secondary transition-colors font-medium text-lg">Serviços</a>
                 <a href="portfolio.html" class="text-mayara-text-deep hover:text-mayara-secondary transition-colors font-medium text-lg">Galeria</a>
-                <a href="#contato" class="bg-mayara-primary text-mayara-text-deep px-8 py-3 rounded-full font-semibold shadow-md hover:bg-white transition-all active:scale-95 w-full mt-4">
+                <a href="https://wa.me/5584996748414?text=Oi%20May,%20quero%20marcar%20meu%20horario" target="_blank" class="bg-mayara-primary text-mayara-text-deep px-8 py-3 rounded-full font-semibold shadow-md hover:bg-white transition-all active:scale-95 w-full mt-4">
                     Agendar
                 </a>
             </div>
@@ -140,7 +146,7 @@
                 Transforme a relação com seus cachos através de técnicas especializadas e atendimento humanizado.
               </p>
               <div class="flex flex-wrap justify-center md:justify-start gap-4 pt-4">
-                <a href="#contato" class="bg-mayara-primary text-mayara-text-deep px-10 py-4 rounded-full font-bold text-lg shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all active:scale-95 text-center">
+                <a href="https://wa.me/5584996748414?text=Oi%20May,%20quero%20marcar%20meu%20horario" target="_blank" class="bg-mayara-primary text-mayara-text-deep px-10 py-4 rounded-full font-bold text-lg shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all active:scale-95 text-center">
                   Agendar Consultoria
                 </a>
                 <a href="portfolio.html" class="glass text-mayara-text-deep px-10 py-4 rounded-full font-bold text-lg hover:bg-white/50 transition-all flex items-center gap-2 group text-center">
@@ -160,7 +166,7 @@
         </section>
 
         <!-- Sobre Mim -->
-        <section id="sobre" class="bg-white/20 py-24 px-4 md:px-8">
+        <section id="sobre" class="bg-white/20 py-24 px-4 md:px-8 scroll-mt-32">
           <div class="max-w-7xl mx-auto flex flex-col md:flex-row-reverse items-center gap-16">
             <div class="flex-1 space-y-6">
               <h2 class="font-serif text-4xl md:text-5xl text-mayara-text-deep italic">Muito prazer, sou Mayara</h2>
@@ -194,31 +200,47 @@
         </section>
 
         <!-- Serviços -->
-        <section id="servicos" class="max-w-7xl mx-auto px-4 md:px-8">
+        <section id="servicos" class="max-w-7xl mx-auto px-4 md:px-8 scroll-mt-32">
           <div class="text-center space-y-4 mb-16">
             <h2 class="font-serif text-4xl md:text-5xl text-mayara-text-deep">Serviços Especializados</h2>
             <p class="text-mayara-text-body max-w-2xl mx-auto">Soluções completas para todos os tipos de ondas, cachos e crespos.</p>
           </div>
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div class="glass p-8 rounded-3xl space-y-4 hover-tilt hover:shadow-2xl transition-all cursor-default group">
-              <div class="text-4xl bg-mayara-primary/30 w-16 h-16 flex items-center justify-center rounded-2xl group-hover:bg-mayara-secondary/30 transition-colors">✂️</div>
-              <h3 class="text-xl font-bold text-mayara-text-deep">Corte Especializado</h3>
-              <p class="text-sm leading-relaxed">Cortes pensados na geometria de cada cacho, respeitando o volume e o caimento natural.</p>
+            <div class="glass p-4 rounded-3xl space-y-4 hover-tilt hover:shadow-2xl transition-all cursor-default group">
+              <div class="h-48 rounded-2xl overflow-hidden">
+                <img src="portifolioMidias/b1Depois2.jpg" alt="Corte Especializado" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+              </div>
+              <div class="px-2 pb-2">
+                <h3 class="text-xl font-bold text-mayara-text-deep">Corte Especializado</h3>
+                <p class="text-sm leading-relaxed mt-2">Cortes pensados na geometria de cada cacho, respeitando o volume e o caimento natural.</p>
+              </div>
             </div>
-            <div class="glass p-8 rounded-3xl space-y-4 hover-tilt hover:shadow-2xl transition-all cursor-default group">
-              <div class="text-4xl bg-mayara-primary/30 w-16 h-16 flex items-center justify-center rounded-2xl group-hover:bg-mayara-secondary/30 transition-colors">✨</div>
-              <h3 class="text-xl font-bold text-mayara-text-deep">Transição Capilar</h3>
-              <p class="text-sm leading-relaxed">Acompanhamento humanizado para você redescobrir sua identidade durante a transição.</p>
+            <div class="glass p-4 rounded-3xl space-y-4 hover-tilt hover:shadow-2xl transition-all cursor-default group">
+              <div class="h-48 rounded-2xl overflow-hidden">
+                <img src="may-perfil.png" alt="Transição Capilar" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+              </div>
+              <div class="px-2 pb-2">
+                <h3 class="text-xl font-bold text-mayara-text-deep">Transição Capilar</h3>
+                <p class="text-sm leading-relaxed mt-2">Acompanhamento humanizado para você redescobrir sua identidade durante a transição.</p>
+              </div>
             </div>
-            <div class="glass p-8 rounded-3xl space-y-4 hover-tilt hover:shadow-2xl transition-all cursor-default group">
-              <div class="text-4xl bg-mayara-primary/30 w-16 h-16 flex items-center justify-center rounded-2xl group-hover:bg-mayara-secondary/30 transition-colors">💧</div>
-              <h3 class="text-xl font-bold text-mayara-text-deep">Hidratação</h3>
-              <p class="text-sm leading-relaxed">Protocolos exclusivos para devolver a água e os nutrientes essenciais aos seus fios.</p>
+            <div class="glass p-4 rounded-3xl space-y-4 hover-tilt hover:shadow-2xl transition-all cursor-default group">
+              <div class="h-48 rounded-2xl overflow-hidden">
+                <img src="portifolioMidias/a2Depois.jpg" alt="Tratamentos" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+              </div>
+              <div class="px-2 pb-2">
+                <h3 class="text-xl font-bold text-mayara-text-deep">Tratamentos</h3>
+                <p class="text-sm leading-relaxed mt-2">Protocolos exclusivos para devolver a saúde, brilho e maciez aos seus fios.</p>
+              </div>
             </div>
-            <div class="glass p-8 rounded-3xl space-y-4 hover-tilt hover:shadow-2xl transition-all cursor-default group">
-              <div class="text-4xl bg-mayara-primary/30 w-16 h-16 flex items-center justify-center rounded-2xl group-hover:bg-mayara-secondary/30 transition-colors">🎀</div>
-              <h3 class="text-xl font-bold text-mayara-text-deep">Finalização</h3>
-              <p class="text-sm leading-relaxed">Técnicas de definição avançadas que garantem day-afters perfeitos e brilho intenso.</p>
+            <div class="glass p-4 rounded-3xl space-y-4 hover-tilt hover:shadow-2xl transition-all cursor-default group">
+              <div class="h-48 rounded-2xl overflow-hidden">
+                <img src="portifolioMidias/a1Depois.jpg" alt="Colorações" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+              </div>
+              <div class="px-2 pb-2">
+                <h3 class="text-xl font-bold text-mayara-text-deep">Colorações</h3>
+                <p class="text-sm leading-relaxed mt-2">Técnicas de iluminação e cor que preservam a saúde dos cachos e valorizam sua beleza.</p>
+              </div>
             </div>
           </div>
         </section>
@@ -238,15 +260,15 @@
              </div>
              
              <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                <div class="aspect-square rounded-2xl overflow-hidden shadow-lg group">
-                   <img src="https://images.unsplash.com/photo-1620331311520-246422fd82f9?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Transformação 1">
-                </div>
-                <div class="aspect-square rounded-2xl overflow-hidden shadow-lg group">
-                   <img src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Transformação 2">
-                </div>
-                <div class="aspect-square rounded-2xl overflow-hidden shadow-lg group hidden sm:block">
-                   <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Transformação 3">
-                </div>
+                <a href="portfolio.html" class="aspect-square rounded-2xl overflow-hidden shadow-lg group block cursor-pointer">
+                   <img src="portifolioMidias/a1Depois.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Transformação 1">
+                </a>
+                <a href="portfolio.html" class="aspect-square rounded-2xl overflow-hidden shadow-lg group block cursor-pointer">
+                   <img src="portifolioMidias/a2Depois.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Transformação 2">
+                </a>
+                <a href="portfolio.html" class="aspect-square rounded-2xl overflow-hidden shadow-lg group hidden sm:block cursor-pointer">
+                   <img src="portifolioMidias/b1Depois2.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Transformação 3">
+                </a>
              </div>
           </div>
         </section>
