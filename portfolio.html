@@ -483,10 +483,10 @@
         // Update Buttons Styling
         buttons.forEach(btn => {
           btn.classList.remove('bg-mayara-primary', 'scale-105', 'shadow-md');
-          btn.classList.add('glass');
+          btn.classList.add('glass', 'hover:bg-white/40');
           if (btn.id === `btn-${category}`) {
             btn.classList.add('bg-mayara-primary', 'scale-105', 'shadow-md');
-            btn.classList.remove('glass');
+            btn.classList.remove('glass', 'hover:bg-white/40');
           }
         });
 

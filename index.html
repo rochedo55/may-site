@@ -26,12 +26,18 @@
             },
             animation: {
               'tilt': 'tilt 1s infinite linear',
+              'scroll': 'scroll 30s linear infinite',
+              'scroll-mobile': 'scroll 10s linear infinite',
             },
             keyframes: {
               tilt: {
                 '0%, 50%, 100%': { transform: 'rotate(0deg)' },
                 '25%': { transform: 'rotate(1deg)' },
                 '75%': { transform: 'rotate(-1deg)' },
+              },
+              scroll: {
+                '0%': { transform: 'translateX(0)' },
+                '100%': { transform: 'translateX(-50%)' },
               }
             }
           }
@@ -241,6 +247,32 @@
                 <h3 class="text-xl font-bold text-mayara-text-deep">Colorações</h3>
                 <p class="text-sm leading-relaxed mt-2">Técnicas de iluminação e cor que preservam a saúde dos cachos e valorizam sua beleza.</p>
               </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Seção de Marcas Parceiras (Carrossel Infinito) -->
+        <section class="py-8 bg-white/10 border-y border-white/20">
+          <div class="max-w-7xl mx-auto px-4 mb-8 text-center">
+             <h2 class="font-serif text-4xl md:text-5xl text-mayara-text-deep">Marcas que cuidam dos seus fios</h2>
+          </div>
+          <div class="relative overflow-hidden">
+            <div class="carousel-track animate-scroll-mobile md:animate-scroll flex items-center gap-12 md:gap-24 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-500 py-4">
+              <!-- Conjunto 1 -->
+              <!-- <img src="https://placehold.co/200x80/ffffff/4a044e?text=Deva+Curl" alt="Deva Curl" class="h-12 w-auto object-contain rounded"> -->
+              <img src="logos/lorealLogo.svg" alt="L'Oréal" class="h-12 w-auto object-contain rounded">
+              <img src="logos/widicareLogo.png" alt="Widi Care" class="h-12 w-auto object-contain rounded">
+              <img src="logos/bhulmanLogo.jpg" alt="bhulman" class="h-12 w-auto object-contain rounded">
+              <img src="logos/lollaLogo.png" alt="Lola Cosmetics" class="h-12 w-auto object-contain rounded">
+              <img src="logos/trussLogo.svg" alt="Truss" class="h-12 w-auto object-contain rounded">
+              
+              <!-- Conjunto 2 (Cópia para efeito infinito) -->
+              <!-- <img src="https://placehold.co/200x80/ffffff/4a044e?text=Deva+Curl" alt="Deva Curl" class="h-12 w-auto object-contain rounded"> -->
+              <img src="logos/lorealLogo.svg" alt="L'Oréal" class="h-12 w-auto object-contain rounded">
+              <img src="logos/widicareLogo.png" alt="Widi Care" class="h-12 w-auto object-contain rounded">
+              <img src="logos/bhulmanLogo.jpg" alt="bhulman" class="h-12 w-auto object-contain rounded">
+              <img src="logos/lollaLogo.png" alt="Lola Cosmetics" class="h-12 w-auto object-contain rounded">
+              <img src="logos/trussLogo.svg" alt="Truss" class="h-12 w-auto object-contain rounded">
             </div>
           </div>
         </section>
