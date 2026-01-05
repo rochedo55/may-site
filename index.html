@@ -71,6 +71,14 @@
         z-index: -10;
         pointer-events: none;
       }
+      /* Custom Scrollbar for Modal Text */
+      .custom-scrollbar::-webkit-scrollbar {
+        width: 6px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+        background-color: rgba(74, 4, 78, 0.2);
+        border-radius: 20px;
+      }
     </style>
 <script type="importmap">
 {
@@ -163,7 +171,7 @@
             </div>
             <div class="flex-1 relative">
               <div class="relative z-10 rounded-2xl overflow-hidden shadow-2xl border-4 border-white/30 transform hover:scale-105 transition-transform duration-500">
-                <img src="may-perfil.png" alt="Cabelo Cacheado" class="w-full h-full object-cover">
+                <img src="may-perfil2.jpeg" alt="Cabelo Cacheado" class="w-full h-full object-cover">
               </div>
               <div class="absolute -top-10 -right-10 w-40 h-40 bg-mayara-secondary/30 rounded-full blur-3xl -z-10"></div>
               <div class="absolute -bottom-10 -left-10 w-64 h-64 bg-mayara-primary/20 rounded-full blur-3xl -z-10"></div>
@@ -199,7 +207,7 @@
             </div>
             <div class="flex-1 relative flex justify-center">
               <div class="w-80 h-[500px] glass rounded-3xl p-4 shadow-xl rotate-3 hover:rotate-0 transition-all duration-700">
-                 <img src="may-perfil.png" alt="Mayara" class="w-full h-full object-cover rounded-2xl">
+                 <img src="may-espelho.jpg" alt="Mayara" class="w-full h-full object-cover rounded-2xl">
               </div>
             </div>
           </div>
@@ -212,40 +220,40 @@
             <p class="text-mayara-text-body max-w-2xl mx-auto">Soluções completas para todos os tipos de ondas, cachos e crespos.</p>
           </div>
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div class="glass p-4 rounded-3xl space-y-4 hover-tilt hover:shadow-2xl transition-all cursor-default group">
-              <div class="h-48 rounded-2xl overflow-hidden">
+            <div class="glass p-4 rounded-3xl space-y-4 hover-tilt hover:shadow-2xl transition-all cursor-pointer group" onclick="openServiceModal(0)">
+              <div class="h-48 rounded-2xl overflow-hidden relative service-card-preview" data-index="0">
                 <img src="portifolioMidias/b1Depois2.jpg" alt="Corte Especializado" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
               </div>
               <div class="px-2 pb-2">
                 <h3 class="text-xl font-bold text-mayara-text-deep">Corte Especializado</h3>
-                <p class="text-sm leading-relaxed mt-2">Cortes pensados na geometria de cada cacho, respeitando o volume e o caimento natural.</p>
+                <p class="text-sm leading-relaxed mt-2">Cortes a seco para esculpir os cachos, garantindo definição e movimento.</p>
               </div>
             </div>
-            <div class="glass p-4 rounded-3xl space-y-4 hover-tilt hover:shadow-2xl transition-all cursor-default group">
-              <div class="h-48 rounded-2xl overflow-hidden">
-                <img src="may-perfil.png" alt="Transição Capilar" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+            <div class="glass p-4 rounded-3xl space-y-4 hover-tilt hover:shadow-2xl transition-all cursor-pointer group" onclick="openServiceModal(1)">
+              <div class="h-48 rounded-2xl overflow-hidden relative service-card-preview" data-index="1">
+                <img src="portifolioMidias/transicaoAntesEDepois.jpeg" alt="Transição Capilar" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
               </div>
               <div class="px-2 pb-2">
                 <h3 class="text-xl font-bold text-mayara-text-deep">Transição Capilar</h3>
-                <p class="text-sm leading-relaxed mt-2">Acompanhamento humanizado para você redescobrir sua identidade durante a transição.</p>
+                <p class="text-sm leading-relaxed mt-2">Apoio e técnicas para você passar pela transição de forma leve e segura.</p>
               </div>
             </div>
-            <div class="glass p-4 rounded-3xl space-y-4 hover-tilt hover:shadow-2xl transition-all cursor-default group">
-              <div class="h-48 rounded-2xl overflow-hidden">
+            <div class="glass p-4 rounded-3xl space-y-4 hover-tilt hover:shadow-2xl transition-all cursor-pointer group" onclick="openServiceModal(2)">
+              <div class="h-48 rounded-2xl overflow-hidden relative service-card-preview" data-index="2">
                 <img src="portifolioMidias/a2Depois.jpg" alt="Tratamentos" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
               </div>
               <div class="px-2 pb-2">
                 <h3 class="text-xl font-bold text-mayara-text-deep">Tratamentos</h3>
-                <p class="text-sm leading-relaxed mt-2">Protocolos exclusivos para devolver a saúde, brilho e maciez aos seus fios.</p>
+                <p class="text-sm leading-relaxed mt-2">Protocolos para devolver saúde, brilho e maciez aos seus fios.</p>
               </div>
             </div>
-            <div class="glass p-4 rounded-3xl space-y-4 hover-tilt hover:shadow-2xl transition-all cursor-default group">
-              <div class="h-48 rounded-2xl overflow-hidden">
+            <div class="glass p-4 rounded-3xl space-y-4 hover-tilt hover:shadow-2xl transition-all cursor-pointer group" onclick="openServiceModal(3)">
+              <div class="h-48 rounded-2xl overflow-hidden relative service-card-preview" data-index="3">
                 <img src="portifolioMidias/a1Depois.jpg" alt="Colorações" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
               </div>
               <div class="px-2 pb-2">
                 <h3 class="text-xl font-bold text-mayara-text-deep">Colorações</h3>
-                <p class="text-sm leading-relaxed mt-2">Técnicas de iluminação e cor que preservam a saúde dos cachos e valorizam sua beleza.</p>
+                <p class="text-sm leading-relaxed mt-2">Técnicas de iluminação que preservam a saúde e a beleza dos cachos.</p>
               </div>
             </div>
           </div>
@@ -265,6 +273,7 @@
               <img src="logos/bhulmanLogo.jpg" alt="bhulman" class="h-12 w-auto object-contain rounded">
               <img src="logos/lollaLogo.png" alt="Lola Cosmetics" class="h-12 w-auto object-contain rounded">
               <img src="logos/trussLogo.svg" alt="Truss" class="h-12 w-auto object-contain rounded">
+              <img src="logos/kahnoa_logo2.png" alt="Kahnoa" class="h-12 w-auto object-contain rounded">
               
               <!-- Conjunto 2 (Cópia para efeito infinito) -->
               <!-- <img src="https://placehold.co/200x80/ffffff/4a044e?text=Deva+Curl" alt="Deva Curl" class="h-12 w-auto object-contain rounded"> -->
@@ -273,6 +282,7 @@
               <img src="logos/bhulmanLogo.jpg" alt="bhulman" class="h-12 w-auto object-contain rounded">
               <img src="logos/lollaLogo.png" alt="Lola Cosmetics" class="h-12 w-auto object-contain rounded">
               <img src="logos/trussLogo.svg" alt="Truss" class="h-12 w-auto object-contain rounded">
+              <img src="logos/kahnoa_logo2.png" alt="Kahnoa" class="h-12 w-auto object-contain rounded">
             </div>
           </div>
         </section>
@@ -305,6 +315,52 @@
           </div>
         </section>
     </main>
+
+    <!-- Service Modal -->
+    <div id="service-modal" class="fixed inset-0 z-[60] hidden opacity-0 transition-opacity duration-300" aria-hidden="true">
+        <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" onclick="closeServiceModal()"></div>
+        <div class="absolute inset-0 flex items-center justify-center p-4 pointer-events-none">
+            <div class="bg-white/90 glass rounded-[2rem] w-full max-w-5xl max-h-[90vh] overflow-hidden pointer-events-auto shadow-2xl flex flex-col md:flex-row relative">
+                <button onclick="closeServiceModal()" class="absolute top-4 right-4 z-10 p-2 bg-white/50 rounded-full hover:bg-white transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
+                
+                <!-- Carousel Section -->
+                <div class="w-full md:w-1/2 bg-gray-100 relative min-h-[300px] md:min-h-full">
+                    <img id="service-modal-image" src="" alt="Detalhe do Serviço" class="w-full h-full object-cover absolute inset-0 transition-opacity duration-300">
+                    <video id="service-modal-video" class="w-full h-full object-cover absolute inset-0 transition-opacity duration-300 hidden" autoplay muted loop playsinline></video>
+                    
+                    <!-- Navigation Arrows -->
+                    <button onclick="prevServiceSlide()" class="absolute left-4 top-1/2 -translate-y-1/2 p-2 bg-white/30 hover:bg-white/80 rounded-full backdrop-blur-md transition-all">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                    </button>
+                    <button onclick="nextServiceSlide()" class="absolute right-4 top-1/2 -translate-y-1/2 p-2 bg-white/30 hover:bg-white/80 rounded-full backdrop-blur-md transition-all">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </button>
+                    
+                    <!-- Dots -->
+                    <div id="service-modal-dots" class="absolute bottom-4 left-0 right-0 flex justify-center gap-2"></div>
+                </div>
+
+                <!-- Content Section -->
+                <div class="w-full md:w-1/2 p-8 md:p-12 flex flex-col overflow-y-auto custom-scrollbar">
+                    <span id="service-modal-category" class="inline-block px-3 py-1 rounded-full bg-mayara-primary/30 text-mayara-text-deep text-xs font-bold uppercase tracking-widest w-fit mb-4"></span>
+                    <h2 id="service-modal-title" class="font-serif text-3xl md:text-4xl text-mayara-text-deep font-bold mb-4"></h2>
+                    
+                    <div class="space-y-4 text-mayara-text-body/90 leading-relaxed">
+                        <h3 class="font-bold text-mayara-text-deep text-lg">Sobre o Serviço</h3>
+                        <p id="service-modal-story"></p>
+                    </div>
+                    
+                    <div class="mt-auto pt-8">
+                        <a href="https://wa.me/5584996748414?text=Oi%20May,%20quero%20saber%20mais%20sobre%20um%20serviço!" target="_blank" onclick="closeServiceModal()" class="block w-full text-center bg-mayara-text-deep text-white py-3 rounded-full font-bold hover:bg-mayara-secondary hover:text-mayara-text-deep transition-all shadow-lg">
+                            Quero Agendar
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer id="contato" class="bg-white/40 border-t border-mayara-primary/20 pt-16 pb-8 px-4">
@@ -342,6 +398,153 @@
 
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
+
+        // --- Service Modal Data & Logic ---
+        const serviceData = [
+            {
+                category: "Cortes",
+                title: "Corte Especializado",
+                story: "Nosso corte especializado, muitas vezes realizado a seco, permite esculpir o cabelo cacho por cacho. Essa técnica garante que o formato final seja exatamente o desejado, evitando surpresas após a secagem. Respeitamos a individualidade de cada fio para criar um visual harmonioso, com movimento, definição e que valoriza a sua beleza única. É mais que um corte, é o início de uma nova relação com seu cabelo.",
+                images: [
+                    "portifolioMidias/b1Depois2.jpg",
+                    "portifolioMidias/b1Depois.mp4",
+                    "portifolioMidias/b1Antes.jpg"
+                ]
+            },
+            {
+                category: "Transição",
+                title: "Transição Capilar",
+                story: "A transição capilar é uma jornada de redescoberta e paciência. Oferecemos um acompanhamento completo, com cronogramas de tratamento para fortalecer a nova textura, dicas de texturização para lidar com as duas texturas e, claro, o Big Chop no momento em que você se sentir pronta. Nosso objetivo é que você se sinta segura, bonita e empoderada em cada etapa do processo.",
+                images: [
+                    "portifolioMidias/transicaoAntesEDepois.jpeg",
+                    "portifolioMidias/transicaoAntesEdepois2.jpeg",
+                    "portifolioMidias/transicaoVideo.mp4"
+                ]
+            },
+            {
+                category: "Tratamentos",
+                title: "Tratamentos Profundos",
+                story: "Cabelos cacheados e crespos necessitam de cuidados especiais. Desenvolvemos protocolos de tratamento personalizados que atendem às necessidades específicas do seu fio, seja para hidratação, nutrição ou reconstrução. Usando produtos de alta performance, recuperamos a saúde da fibra capilar, combatemos o ressecamento e o frizz, e devolvemos a definição e o brilho que seus cachos merecem.",
+                images: [
+                    "portifolioMidias/a2Depois.jpg",
+                    "portifolioMidias/a2Antes.jpg"
+                ]
+            },
+            {
+                category: "Coloração",
+                title: "Colorações e Mechas",
+                story: "Colorir cabelos cacheados exige técnica e cuidado para não danificar a estrutura dos fios. Somos especialistas em técnicas como Morena Iluminada e outras mechas que valorizam a curvatura do cabelo. Utilizamos produtos que protegem a fibra capilar durante o processo químico e indicamos o tratamento pós-cor para garantir que seus cachos continuem saudáveis, definidos e com uma cor vibrante.",
+                images: [
+                    "portifolioMidias/a1Depois.jpg",
+                    "portifolioMidias/a1Antes.jpg"
+                ]
+            }
+        ];
+
+        let currentServiceItemIndex = 0;
+        let currentServiceImageIndex = 0;
+        let serviceAutoPlayTimer = null;
+        const SERVICE_AUTO_PLAY_DELAY = 4000;
+
+        function openServiceModal(index) {
+            currentServiceItemIndex = index;
+            currentServiceImageIndex = 0;
+            updateServiceModalContent();
+            
+            const modal = document.getElementById('service-modal');
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+            }, 10);
+            document.body.style.overflow = 'hidden';
+            startServiceAutoPlay();
+        }
+
+        function closeServiceModal() {
+            stopServiceAutoPlay();
+            const modal = document.getElementById('service-modal');
+            modal.classList.add('opacity-0');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+            document.body.style.overflow = '';
+        }
+
+        function updateServiceModalContent() {
+            const item = serviceData[currentServiceItemIndex];
+            document.getElementById('service-modal-category').textContent = item.category;
+            document.getElementById('service-modal-title').textContent = item.title;
+            document.getElementById('service-modal-story').textContent = item.story;
+            
+            updateServiceCarousel();
+        }
+
+        function updateServiceCarousel() {
+            const item = serviceData[currentServiceItemIndex];
+            const imgElement = document.getElementById('service-modal-image');
+            const videoElement = document.getElementById('service-modal-video');
+            const currentSrc = item.images[currentServiceImageIndex];
+            const isVideo = currentSrc.endsWith('.mp4');
+            
+            imgElement.style.opacity = '0';
+            videoElement.style.opacity = '0';
+
+            setTimeout(() => {
+                if (isVideo) {
+                    imgElement.classList.add('hidden');
+                    videoElement.classList.remove('hidden');
+                    videoElement.src = currentSrc;
+                    videoElement.style.opacity = '1';
+                    videoElement.play().catch(e => console.log("Autoplay prevented", e));
+                } else {
+                    videoElement.classList.add('hidden');
+                    videoElement.pause();
+                    imgElement.classList.remove('hidden');
+                    imgElement.src = currentSrc;
+                    imgElement.style.opacity = '1';
+                }
+            }, 150);
+
+            const dotsContainer = document.getElementById('service-modal-dots');
+            dotsContainer.innerHTML = '';
+            item.images.forEach((_, idx) => {
+                const dot = document.createElement('button');
+                dot.className = `w-2 h-2 rounded-full transition-all ${idx === currentServiceImageIndex ? 'bg-white w-6' : 'bg-white/50 hover:bg-white/80'}`;
+                dot.onclick = (e) => {
+                    e.stopPropagation();
+                    currentServiceImageIndex = idx;
+                    updateServiceCarousel();
+                    startServiceAutoPlay();
+                };
+                dotsContainer.appendChild(dot);
+            });
+        }
+
+        function nextServiceSlide(isManual = true) {
+            const item = serviceData[currentServiceItemIndex];
+            currentServiceImageIndex = (currentServiceImageIndex + 1) % item.images.length;
+            updateServiceCarousel();
+            if (isManual) startServiceAutoPlay();
+        }
+
+        function prevServiceSlide() {
+            const item = serviceData[currentServiceItemIndex];
+            currentServiceImageIndex = (currentServiceImageIndex - 1 + item.images.length) % item.images.length;
+            updateServiceCarousel();
+            startServiceAutoPlay();
+        }
+
+        function startServiceAutoPlay() {
+            stopServiceAutoPlay();
+            serviceAutoPlayTimer = setInterval(() => nextServiceSlide(false), SERVICE_AUTO_PLAY_DELAY);
+        }
+
+        function stopServiceAutoPlay() {
+            if (serviceAutoPlayTimer) {
+                clearInterval(serviceAutoPlayTimer);
+                serviceAutoPlayTimer = null;
+            }
+        }
 
         // Mobile Menu Logic
         const menuBtn = document.getElementById('menu-btn');
@@ -406,6 +609,56 @@
                 if (!mobileMenu.classList.contains('hidden')) toggleMenu();
             });
         });
+
+        // Close modals on Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === "Escape") {
+                closeServiceModal();
+            }
+        });
+
+        // --- Service Card Preview Carousel ---
+        function initServicePreviews() {
+            const previews = document.querySelectorAll('.service-card-preview');
+            
+            previews.forEach(container => {
+                const index = parseInt(container.getAttribute('data-index'));
+                if (isNaN(index) || !serviceData[index]) return;
+
+                const item = serviceData[index];
+                // Filter for images only for the preview card (exclude videos)
+                const images = item.images.filter(src => !src.endsWith('.mp4'));
+                
+                if (images.length <= 1) return; // No need for carousel if 0 or 1 image
+
+                // Rebuild container content
+                container.innerHTML = '';
+                images.forEach((src, i) => {
+                    const img = document.createElement('img');
+                    img.src = src;
+                    img.alt = item.title;
+                    // Base classes + transition classes + hover effect classes
+                    img.className = `w-full h-full object-cover absolute inset-0 transition-all duration-1000 group-hover:scale-110 ${i === 0 ? 'opacity-100' : 'opacity-0'}`;
+                    container.appendChild(img);
+                });
+
+                let current = 0;
+                const imgs = container.querySelectorAll('img');
+                
+                setInterval(() => {
+                    imgs[current].classList.remove('opacity-100');
+                    imgs[current].classList.add('opacity-0');
+                    
+                    current = (current + 1) % imgs.length;
+                    
+                    imgs[current].classList.remove('opacity-0');
+                    imgs[current].classList.add('opacity-100');
+                }, 3000 + (index * 500)); // Staggered start so they don't all switch at once
+            });
+        }
+
+        // Initialize previews
+        initServicePreviews();
     </script>
 </body>
 </html>
